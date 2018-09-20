@@ -58,7 +58,7 @@ double integral = 0;
 ros::Time lasttime;
 void odomCallback(const nav_msgs::Odometry::ConstPtr& data)
 {
-	xspeed = data->twist.twist.linear.x;
+/*	xspeed = data->twist.twist.linear.x;
 	zrot = data->twist.twist.angular.z;
 	double error = targetX-xspeed;
 	integral = integral + error*(ros::Time::now()-lasttime).toSec();
@@ -72,13 +72,18 @@ void odomCallback(const nav_msgs::Odometry::ConstPtr& data)
 	std::cout << zrot<<"\n\n";
 	//}
 	previous_error = error;
-	lasttime = ros::Time::now();
+	lasttime = ros::Time::now();*/
 }
 int lastL;
 int lastR;
-ros::Time lasttime2;
 void encCallback(const kobuki_msgs::SensorState::ConstPtr& data)
 {
+	if (lasttime.toSec() == 0) {
+		lasttime = ros::Time::now();
+		lastL = data->left_encoder;
+		lastR = data->right_encoder;
+		return;
+	}
 	int eL = data->left_encoder;
 	int eR = data->right_encoder;
 	int dx = eL-lastL;
@@ -93,15 +98,28 @@ void encCallback(const kobuki_msgs::SensorState::ConstPtr& data)
 	std::cout << dy << "\n\n";
 	lastL = eL;
 	lastR = eR;
-	lasttime2 = ros::Time::now();
-
+	xspeed = (dx+dy)*0.0021127;
+	zrot = (dy-dx)*0.01789;
+	double error = targetX-xspeed;
+	integral = integral + error*(ros::Time::now()-lasttime).toSec();
+	double de = (error-previous_error)/(ros::Time::now()-lasttime).toSec();
+	double output = 6*error+0.2*integral+0.05*de;
+	//if (!bumper) {
+	linearX += (ros::Time::now()-lasttime).toSec()*output;
+	angularZ = constantZ;
+	std::cout << "Odom data: "<<linearX <<'\n';
+	std::cout<< xspeed<<'\n';
+	std::cout << error<<"\n\n";
+	//}
+	previous_error = error;
+	lasttime = ros::Time::now();
 }
 
 int main(int argc, char **argv)
 {
 	ros::init(argc, argv, "turtlebot_turn");
 	ros::NodeHandle nh;
-	lasttime = ros::Time::now();
+	lasttime = ros::Time(0);
 	vel_pub = nh.advertise<geometry_msgs::Twist>("/cmd_vel_mux/input/navi", 1, true);
 	ros::Subscriber sub2 = nh.subscribe("/joy", 10, joyCallback);
 	ros::Subscriber sub3 = nh.subscribe("/mobile_base/events/bumper", 1, bumperCallback);
