@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/turtlebot_turn.dir/turtlebot_1/src/turtlebot_turn.cpp.o  -o turtlebot_turn -rdynamic 

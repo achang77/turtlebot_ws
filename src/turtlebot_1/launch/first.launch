@@ -1,0 +1,7 @@
+<launch>
+<node name="firstnode" pkg="turtlebot_1" type="turtlebot_turn" />
+<!--
+<node name="firstnode" pkg="turtlebot_1" type="turtlebot_turn.py" />
+-->
+
+</launch>

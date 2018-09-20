@@ -1,0 +1,8 @@
+prefix=/home/robot10/turtlebot_ws/install
+
+Name: lab_1
+Description: Description of lab_1
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/robot10/turtlebot_ws/install/lib 
+Requires: 

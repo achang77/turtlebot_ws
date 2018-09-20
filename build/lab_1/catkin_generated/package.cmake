@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "lab_1")
+set(lab_1_MAINTAINER "robot10 <robot10@todo.todo>")
+set(lab_1_DEPRECATED "")
+set(lab_1_VERSION "0.0.0")
+set(lab_1_BUILD_DEPENDS "geometry_msgs" "kobuki_msgs" "roscpp" "rospy" "sensor_msgs")
+set(lab_1_RUN_DEPENDS "geometry_msgs" "kobuki_msgs" "roscpp" "rospy" "sensor_msgs")
+set(lab_1_BUILDTOOL_DEPENDS "catkin")

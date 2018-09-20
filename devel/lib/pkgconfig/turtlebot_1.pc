@@ -1,0 +1,8 @@
+prefix=/home/robot10/turtlebot_ws/devel
+
+Name: turtlebot_1
+Description: Description of turtlebot_1
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/robot10/turtlebot_ws/devel/lib 
+Requires: 
