@@ -12,6 +12,7 @@ lab_1/CMakeFiles/joytest.dir/src/joytest.cpp.o: /opt/ros/indigo/include/geometry
 lab_1/CMakeFiles/joytest.dir/src/joytest.cpp.o: /opt/ros/indigo/include/geometry_msgs/TwistWithCovariance.h
 lab_1/CMakeFiles/joytest.dir/src/joytest.cpp.o: /opt/ros/indigo/include/geometry_msgs/Vector3.h
 lab_1/CMakeFiles/joytest.dir/src/joytest.cpp.o: /opt/ros/indigo/include/kobuki_msgs/BumperEvent.h
+lab_1/CMakeFiles/joytest.dir/src/joytest.cpp.o: /opt/ros/indigo/include/kobuki_msgs/SensorState.h
 lab_1/CMakeFiles/joytest.dir/src/joytest.cpp.o: /opt/ros/indigo/include/nav_msgs/Odometry.h
 lab_1/CMakeFiles/joytest.dir/src/joytest.cpp.o: /opt/ros/indigo/include/ros/advertise_options.h
 lab_1/CMakeFiles/joytest.dir/src/joytest.cpp.o: /opt/ros/indigo/include/ros/advertise_service_options.h
