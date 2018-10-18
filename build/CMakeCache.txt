@@ -315,6 +315,12 @@ lab_1_BINARY_DIR:STATIC=/home/robot10/turtlebot_ws/build/lab_1
 //Value Computed by CMake
 lab_1_SOURCE_DIR:STATIC=/home/robot10/turtlebot_ws/src/lab_1
 
+//Value Computed by CMake
+lab_2_BINARY_DIR:STATIC=/home/robot10/turtlebot_ws/build/lab_2
+
+//Value Computed by CMake
+lab_2_SOURCE_DIR:STATIC=/home/robot10/turtlebot_ws/src/lab_2
+
 //Path to a library.
 lib:FILEPATH=/opt/ros/indigo/lib/libxmlrpcpp.so
 
@@ -459,7 +465,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=4
+CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=5
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

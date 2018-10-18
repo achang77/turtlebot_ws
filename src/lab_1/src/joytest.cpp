@@ -58,21 +58,9 @@ double integral = 0;
 ros::Time lasttime;
 void odomCallback(const nav_msgs::Odometry::ConstPtr& data)
 {
-/*	xspeed = data->twist.twist.linear.x;
-	zrot = data->twist.twist.angular.z;
-	double error = targetX-xspeed;
-	integral = integral + error*(ros::Time::now()-lasttime).toSec();
-	double de = (error-previous_error)/(ros::Time::now()-lasttime).toSec();
-	double output = 6*error+0.2*integral+0.05*de;
-	//if (!bumper) {
-	linearX += (ros::Time::now()-lasttime).toSec()*output;
-	angularZ = constantZ;
-	std::cout << "Odom data: "<<linearX <<'\n';
+	std::cout << "Odom data: "<<data->twist.twist.linear.x<<'\n';
 	std::cout<< xspeed<<'\n';
-	std::cout << zrot<<"\n\n";
-	//}
-	previous_error = error;
-	lasttime = ros::Time::now();*/
+	std::cout << data->twist.twist.angular.z<<"\n\n";
 }
 int lastL;
 int lastR;
@@ -92,10 +80,11 @@ void encCallback(const kobuki_msgs::SensorState::ConstPtr& data)
 	if (dx < -32000) dx += 1<<16;
 	if (dy > 32000) dy -= 1<<16;
 	if (dy < -32000) dy += 1<<16;
-	std::cout << "Encoder data: "<<(dx+dy)*0.0021127<<"\n";
-	std::cout << (dy-dx)*0.01789 << '\n';
-	std::cout << dx << '\n';
-	std::cout << dy << "\n\n";
+	if (dx > 200 || dx < -200 || dy > 200 || dy < -200) return;
+	// std::cout << "Encoder data: "<<(dx+dy)*0.0021127<<" "<<targetX<<"\n";
+	// std::cout << (dy-dx)*0.01789 << '\n';
+	// std::cout << dx << '\n';
+	// std::cout << dy << "\n\n";
 	lastL = eL;
 	lastR = eR;
 	xspeed = (dx+dy)*0.0021127;
@@ -103,14 +92,14 @@ void encCallback(const kobuki_msgs::SensorState::ConstPtr& data)
 	double error = targetX-xspeed;
 	integral = integral + error*(ros::Time::now()-lasttime).toSec();
 	double de = (error-previous_error)/(ros::Time::now()-lasttime).toSec();
-	double output = 6*error+0.2*integral+0.05*de;
+	double output = 5*error+0.02*integral+0.05*de;
 	//if (!bumper) {
 	linearX += (ros::Time::now()-lasttime).toSec()*output;
 	angularZ = constantZ;
-	std::cout << "Odom data: "<<linearX <<'\n';
-	std::cout<< xspeed<<'\n';
-	std::cout << error<<"\n\n";
-	//}
+	// std::cout << "Set motor speed: "<<linearX <<'\n';
+	// std::cout << "Read motor speed: "<< xspeed<<'\n';
+	// std::cout  << "Change in motor speed: "<< output<<" "<<error<<" "<<integral<<" "<<de<<" "<<previous_error<<"\n\n";
+	// //}
 	previous_error = error;
 	lasttime = ros::Time::now();
 }
@@ -124,7 +113,7 @@ int main(int argc, char **argv)
 	ros::Subscriber sub2 = nh.subscribe("/joy", 10, joyCallback);
 	ros::Subscriber sub3 = nh.subscribe("/mobile_base/events/bumper", 1, bumperCallback);
 	ros::Subscriber sub4 = nh.subscribe("/odom", 10, odomCallback);
-	ros::Subscriber sub5 = nh.subscribe("/mobile_base/sensors/core", 10, encCallback);
+	ros::Subscriber sub5 = nh.subscribe("/mobile_base/sensors/core", 20, encCallback);
 	ros::Rate loop_rate(1000);
 	std::srand((int)ros::Time::now().toSec());
 	double turntime = 0.75+(1.75*rand())/RAND_MAX;

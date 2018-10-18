@@ -514,6 +514,19 @@ std_msgs_generate_messages_py/fast:
 .PHONY : std_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named part_1
+
+# Build rule for target.
+part_1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 part_1
+.PHONY : part_1
+
+# fast build rule for target.
+part_1/fast:
+	$(MAKE) -f lab_2/CMakeFiles/part_1.dir/build.make lab_2/CMakeFiles/part_1.dir/build
+.PHONY : part_1/fast
+
+#=============================================================================
 # Target rules for targets named turtlebot_turn
 
 # Build rule for target.
@@ -567,6 +580,7 @@ help:
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_py"
+	@echo "... part_1"
 	@echo "... turtlebot_turn"
 .PHONY : help
 

@@ -1,2 +1,2 @@
-lab_1:turtlebot_1
+lab_1:lab_2:turtlebot_1
 -DCATKIN_DEVEL_PREFIX=/home/robot10/turtlebot_ws/devel -DCMAKE_INSTALL_PREFIX=/home/robot10/turtlebot_ws/install -G Unix Makefiles

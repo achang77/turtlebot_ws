@@ -14,11 +14,15 @@ SET(CMAKE_MAKEFILE_DEPENDS
   "catkin_generated/order_packages.cmake"
   "lab_1/catkin_generated/ordered_paths.cmake"
   "lab_1/catkin_generated/package.cmake"
+  "lab_2/catkin_generated/ordered_paths.cmake"
+  "lab_2/catkin_generated/package.cmake"
   "turtlebot_1/catkin_generated/ordered_paths.cmake"
   "turtlebot_1/catkin_generated/package.cmake"
   "/home/robot10/turtlebot_ws/src/CMakeLists.txt"
   "/home/robot10/turtlebot_ws/src/lab_1/CMakeLists.txt"
   "/home/robot10/turtlebot_ws/src/lab_1/package.xml"
+  "/home/robot10/turtlebot_ws/src/lab_2/CMakeLists.txt"
+  "/home/robot10/turtlebot_ws/src/lab_2/package.xml"
   "/home/robot10/turtlebot_ws/src/turtlebot_1/CMakeLists.txt"
   "/home/robot10/turtlebot_ws/src/turtlebot_1/package.xml"
   "/opt/ros/indigo/share/actionlib_msgs/cmake/actionlib_msgs-extras.cmake"
@@ -174,6 +178,7 @@ SET(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "gtest/CMakeFiles/CMakeDirectoryInformation.cmake"
   "lab_1/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "lab_2/CMakeFiles/CMakeDirectoryInformation.cmake"
   "turtlebot_1/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
@@ -207,5 +212,6 @@ SET(CMAKE_DEPEND_INFO_FILES
   "lab_1/CMakeFiles/std_msgs_generate_messages_cpp.dir/DependInfo.cmake"
   "lab_1/CMakeFiles/std_msgs_generate_messages_lisp.dir/DependInfo.cmake"
   "lab_1/CMakeFiles/std_msgs_generate_messages_py.dir/DependInfo.cmake"
+  "lab_2/CMakeFiles/part_1.dir/DependInfo.cmake"
   "turtlebot_1/CMakeFiles/turtlebot_turn.dir/DependInfo.cmake"
   )

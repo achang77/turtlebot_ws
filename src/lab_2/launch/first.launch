@@ -1,0 +1,4 @@
+<launch>
+<node name="firstnode" pkg="lab_2" type="part_1" output="screen" />
+
+</launch>

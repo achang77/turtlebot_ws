@@ -977,6 +977,56 @@ clean: lab_1/CMakeFiles/std_msgs_generate_messages_py.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory lab_2
+
+# Convenience name for "all" pass in the directory.
+lab_2/all: lab_2/CMakeFiles/part_1.dir/all
+.PHONY : lab_2/all
+
+# Convenience name for "clean" pass in the directory.
+lab_2/clean: lab_2/CMakeFiles/part_1.dir/clean
+.PHONY : lab_2/clean
+
+# Convenience name for "preinstall" pass in the directory.
+lab_2/preinstall:
+.PHONY : lab_2/preinstall
+
+#=============================================================================
+# Target rules for target lab_2/CMakeFiles/part_1.dir
+
+# All Build rule for target.
+lab_2/CMakeFiles/part_1.dir/all:
+	$(MAKE) -f lab_2/CMakeFiles/part_1.dir/build.make lab_2/CMakeFiles/part_1.dir/depend
+	$(MAKE) -f lab_2/CMakeFiles/part_1.dir/build.make lab_2/CMakeFiles/part_1.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/robot10/turtlebot_ws/build/CMakeFiles  4
+	@echo "Built target part_1"
+.PHONY : lab_2/CMakeFiles/part_1.dir/all
+
+# Include target in all.
+all: lab_2/CMakeFiles/part_1.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+lab_2/CMakeFiles/part_1.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/robot10/turtlebot_ws/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 lab_2/CMakeFiles/part_1.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/robot10/turtlebot_ws/build/CMakeFiles 0
+.PHONY : lab_2/CMakeFiles/part_1.dir/rule
+
+# Convenience name for target.
+part_1: lab_2/CMakeFiles/part_1.dir/rule
+.PHONY : part_1
+
+# clean rule for target.
+lab_2/CMakeFiles/part_1.dir/clean:
+	$(MAKE) -f lab_2/CMakeFiles/part_1.dir/build.make lab_2/CMakeFiles/part_1.dir/clean
+.PHONY : lab_2/CMakeFiles/part_1.dir/clean
+
+# clean rule for target.
+clean: lab_2/CMakeFiles/part_1.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Directory level rules for directory turtlebot_1
 
 # Convenience name for "all" pass in the directory.
@@ -998,7 +1048,7 @@ turtlebot_1/preinstall:
 turtlebot_1/CMakeFiles/turtlebot_turn.dir/all:
 	$(MAKE) -f turtlebot_1/CMakeFiles/turtlebot_turn.dir/build.make turtlebot_1/CMakeFiles/turtlebot_turn.dir/depend
 	$(MAKE) -f turtlebot_1/CMakeFiles/turtlebot_turn.dir/build.make turtlebot_1/CMakeFiles/turtlebot_turn.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/robot10/turtlebot_ws/build/CMakeFiles  4
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/robot10/turtlebot_ws/build/CMakeFiles  5
 	@echo "Built target turtlebot_turn"
 .PHONY : turtlebot_1/CMakeFiles/turtlebot_turn.dir/all
 

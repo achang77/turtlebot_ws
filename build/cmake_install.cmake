@@ -126,6 +126,7 @@ IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   INCLUDE("/home/robot10/turtlebot_ws/build/gtest/cmake_install.cmake")
   INCLUDE("/home/robot10/turtlebot_ws/build/lab_1/cmake_install.cmake")
+  INCLUDE("/home/robot10/turtlebot_ws/build/lab_2/cmake_install.cmake")
   INCLUDE("/home/robot10/turtlebot_ws/build/turtlebot_1/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
